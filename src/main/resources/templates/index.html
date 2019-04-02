@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agenda Senai</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <fieldset>
+                    <legend>Cadastro</legend>
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="fone">Fone</label>
+                            <input type="text" name="fone" id="fone" class="form-control" placeholder="Fone" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" class="form-control"placeholder="Email" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                        <botton type="submit" class="btn btn-primary bnt-block">
+                                            <i class="fas fa-save"></i>
+                                            Salvar
+                                        </botton>
+                                    </div>
+                                <div class="col-6">
+                                    <botton type="submit" class="btn btn-danger bnt-block">
+                                        <i class="fas fa-eraser"></i>
+                                         Deletar
+                                        </botton>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+            <div class="col-6">
+                <fieldset>
+                    <legend>Lista de Contatos</legend>
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color: aqua">
+                                    <th>Id</th>
+                                    <th>Nome</th>
+                                    <th>Fone</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="contato : ${contatos}">
+                                    <td th:text="${contato.id}"></td>
+                                    <td th:text="${contato.nome}"></td>
+                                    <td th:text="${contato.fone}"></td>
+                                    <td th:text="${contato.email}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
